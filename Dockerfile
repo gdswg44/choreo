@@ -17,7 +17,7 @@ RUN groupadd -g 10016 sudo \
     && chown -R pwuser:pwuser /
 
 # Switch to the non-root user
-USER pwuser
+USER 10016
 
 # Set the default command to run your entrypoint script
 CMD ["/app/entrypoint.sh"]
