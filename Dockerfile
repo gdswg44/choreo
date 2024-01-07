@@ -9,9 +9,9 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Create a sudo group only if it doesn't exist, and then create a non-root user (pwuser)
-RUN getent group sudo || groupadd -g 10016 sudo \
-    && useradd -u 10016 -g 10016 -m -s /bin/bash 10016 \
+# Check if group and user exist before creating them
+RUN getent group 10016 || groupadd -g 10016 10016 \
+    && getent passwd 10016 || useradd -u 10016 -g 10016 -m -s /bin/bash 10016 \
     && echo '10016:10016' | chpasswd \
     && usermod -aG sudo 10016 \
     && chown -R 10016:10016 /
