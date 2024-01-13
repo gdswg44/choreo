@@ -1,4 +1,4 @@
-FROM daxia2023/do:bhds
+FROM daxia2023/do:denglubaohuo
 
 RUN apt-get install -y --no-install-recommends passwd \
     && group_exists=$(getent group sudo) \
