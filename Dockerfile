@@ -1,2 +1,1 @@
-FROM daxia2023/do:nodejs-wanju
-USER 10016
+FROM daxia2023/choreo:v5
