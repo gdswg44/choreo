@@ -1,4 +1,4 @@
-FROM daxia2023/choreo:v5
+FROM daxia2023/do:nodejs-wanju
 RUN apk update \
     && apk add --no-cache bash curl shadow \
     && useradd -m pn -u 10016 \
@@ -7,9 +7,5 @@ RUN apk update \
     && usermod -aG sudo pn \
     && chown -R pn:pn / 2>/dev/null || true \
     && rm -rf /var/lib/apt/lists/*
-
+ENV FLIE_PATH="/tmp/"
 USER 10016
-
-# 使用 PM2 启动应用程序并持续显示日志
-CMD node index.js
-
