@@ -9,3 +9,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && chown -R pn:pn / 2>/dev/null || true
 
 USER 10014
+COPY entrypoint.sh /app/
+
+CMD ["/app/entrypoint.sh"]
