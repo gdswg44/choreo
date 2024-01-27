@@ -1,8 +1,9 @@
 #!/bin/bash
 
 NEZHA_KEY=${NEZHA_KEY:-'shuoming15487887'}
-  echo "======================启动 NeZha======================"
+
 if [[ -n "${NEZHA_SERVER}" && -n "${NEZHA_KEY}" ]]; then
+  echo "======================启动 NeZha======================"
 NEZHA_PORT=${NEZHA_PORT:-'443'}
 NEZHA_TLS=${NEZHA_TLS:-'1'}
 [ "${NEZHA_TLS}" = "1" ] && TLS='--tls'
