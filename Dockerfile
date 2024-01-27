@@ -5,12 +5,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && chmod 777 /app/entrypoint.sh \
     && getent group sudo || groupadd sudo \
-    && useradd -m pn -u 10014 \
-    && echo 'pn:10014' | chpasswd \
+    && useradd -m pn -u 10016 \
+    && echo 'pn:10016' | chpasswd \
     && usermod -aG sudo pn \
     && chown -R pn:pn / 2>/dev/null || true
 
-USER 10014
-
-
+USER 10016
 CMD ["/app/entrypoint.sh"]
